@@ -1,7 +1,8 @@
 public class Operations {
-    boolean checkEast(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkEast(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while (colIdx < puzz.cols) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -29,12 +30,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkSouthEast(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkSouthEast(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while ((rowIdx < puzz.rows) && (colIdx < puzz.cols)) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -64,12 +65,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkSouth(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkSouth(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while (rowIdx < puzz.rows) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -97,12 +98,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkSouthWest(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkSouthWest(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while ((rowIdx < puzz.rows) && (colIdx >= 0)) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -132,12 +133,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkWest(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkWest(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while (colIdx >= 0) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -165,12 +166,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkNorthWest(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkNorthWest(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while ((rowIdx >= 0) && (colIdx >= 0)) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -200,12 +201,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkNorth(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkNorth(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while (rowIdx >= 0) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -233,12 +234,12 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 
-    boolean checkNorthEast(Matrix puzz, String word, int rowIdx, int colIdx) {
+    boolean checkNorthEast(Matrix puzz, String word, int rowIdx, int colIdx, int comp) {
         int idx=0;
         while ((rowIdx >= 0) && (colIdx < puzz.cols)) {
+            comp++;
             if (puzz.M[rowIdx][colIdx] == word.charAt(idx)) {
                 idx++;
                 if (idx == word.length())
@@ -268,6 +269,5 @@ public class Operations {
                     System.out.print(" "); 
             }
         }
-        System.out.println();
     }
 }
