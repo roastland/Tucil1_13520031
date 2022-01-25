@@ -9,5 +9,6 @@ public class main {
         System.out.println("Masukkan nama file ");
         String filename = input.nextLine();
         util.inputPuzzle(filename);
+        input.close();
     }
 }

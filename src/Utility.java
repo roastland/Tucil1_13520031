@@ -2,8 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Utility {
-    String[] puzzle;  // array untuk puzzle
-    String[][] M;   // matriks puzzle
+    String[][] puzzle;  // matriks puzzle
     String[][] keyword; // array untuk word & boolean found
     int rows=0, cols=0;
     Scanner input = new Scanner(System.in);
@@ -25,31 +24,30 @@ public class Utility {
         }
         
         String[] def = text.split("\\r?\\n");   // array default yang menyimpan tiap baris file input
-        int emptyLine = 0;
+        int idx = 0;
 
-        while (def[emptyLine] != "") {
-            this.puzzle[emptyLine] = def[emptyLine];
-            emptyLine++;
+        while (def[idx] != "") {
+            idx++;
         }
         
-        this.rows = puzzle.length;
-        this.cols = puzzle[0].split(" ").length;
-        this.M = new String[rows][cols];
+        this.rows = idx;
+        this.cols = def[0].split(" ").length;
+        this.puzzle = new String[rows][cols];
         for(int i = 0; i < rows; i++){
-            String[] temp = puzzle[i].split(" ");
-            for(int j = 0; j <cols;j++){
-                M[i][j] = temp[j];
+            String[] temp = def[i].split(" ");
+            for(int j = 0; j < cols;j++){
+                puzzle[i][j] = temp[j];
             }
         }
 
-        for (int idx = emptyLine+1; idx < def.length; idx++) {
-            keyword[idx][0] = def[idx];
-            keyword[idx][1] = "notFound";
+        int n = def.length - 1 - idx;
+        this.keyword = new String[n][2];
+        int k = 0;
+        for (int i = idx+1; i < def.length; i++) {
+            keyword[k][0] = def[i];
+            keyword[k][1] = "notFound";
+            k++;
         }
-
-        for (int idx2 = 0; idx2 < keyword.length; idx2++) {
-            System.out.println(keyword[idx2][0]);
-            System.out.println(keyword[idx2][1]);
-        }
+        
     }
 }
